@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #001e4d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 1px 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #153677, #4e085f);
+  color: white;
+  padding: 12px;
+}
+
+/* ======= Form Containers ======= */
+.container, #forgot-password-container {
+  background: #fff;
+  width: 90%;
+  max-width: 400px;
+  margin: 40px auto;
+  border-radius: 10px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.container h2, #forgot-password-container h2 {
+  color: #001e4d;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.container input, #forgot-password-container input[type="email"] {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #999;
+  font-size: 15px;
+}
+
+.container button, #forgot-password-container button {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #001e4d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.container button:hover, #forgot-password-container button:hover {
+  background-color: #003080;
+  transform: scale(1.03);
+}
+
+.container p, #forgot-password-container p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #444;
+}
+
+.container a, #forgot-password-container a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.container a:hover, #forgot-password-container a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ======= Quiz Container ======= */
+.app {
+  background: #fff;
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto 100px;
+  border-radius: 10px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.app h1 {
+  font-size: 22px;
+  color: #001e4d;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.quiz {
+  padding: 15px 0;
+}
+
+.quiz h2 {
+  font-size: 18px;
+  color: #001e4d;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.btn {
+  background: #fff;
+  color: #222;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid #222;
+  padding: 10px;
+  margin: 8px 0;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: blueviolet;
+  color: #fff;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+#skip-btn,
+#next-btn {
+  background: #001e4d;
+  color: #fff;
+  font-weight: 500;
+  width: 140px;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s, transform 0.2s;
+  display: none;
+}
+
+#skip-btn:hover,
+#next-btn:hover {
+  background: #003080;
+  transform: scale(1.05);
+}
+
+.btn.correct::after {
+  content: "✔️";
+  float: right;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.btn.incorrect::after {
+  content: "❌";
+  float: right;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+/* ======= Logout Button ======= */
+#logout-btn, .logout-button {
+  position: fixed;
+  top: 19px;
+  right: 10px;
+  background: #dc3545;
+  color: #fff;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: none;
+  z-index: 1000;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#logout-btn:hover, .logout-button:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+/* ======= Toast ======= */
+#toast {
+  visibility: hidden;
+  min-width: 200px;
+  margin-left: -100px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 20px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 30px;
+  font-size: 15px;
+  opacity: 0;
+  transition: opacity 0.5s ease, top 0.5s ease;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+  top: 50px;
+}
+
+/* ======= Footer ======= */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+  font-style: italic;
+  padding: 8px 10px;
+  background: #001e4d;
+  font-weight: 500;
+}
+
+/* ======= Marquee ======= */
+.marquee-box {
+  background-color: #001e4d;
+  color: white;
+}

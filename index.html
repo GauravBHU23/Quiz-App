@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <button class="logout-button" id="logout-btn" onclick="handleLogout()">Logout</button>
+  <h1 class="main-heading">🎯 Quiz App</h1>
+
+  <marquee behavior="scroll" direction="left" scrollamount="10" style="color: white;  padding: 2px 0;">
+    📢 Welcome to the General Knowledge Quiz! Test your brain and have fun!
+  </marquee>
+
+  <!-- ✅ Sign Up Screen -->
+  <div class="container" id="signup-container">
+    <h2>Sign Up</h2>
+    <input type="text" id="signup-name" required placeholder="Name" />
+    <input type="text" id="signup-username" required placeholder="Username" />
+    <input type="email" id="signup-email" required placeholder="Email" />
+    <input type="password" id="signup-password" required placeholder="Password" />
+    <button onclick="handleSignup()">Sign Up</button>
+    <p style="text-align:center;">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+  </div>
+
+  <!-- ✅ Login Screen -->
+  <div class="container hidden" id="login-container">
+    <h2>Login</h2>
+    <input type="text" id="login-username" placeholder="Username" />
+    <input type="password" id="login-password" placeholder="Password" />
+    <button onclick="handleLogin()">Login</button>
+    <p style="text-align:center;">Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+    <p style="text-align:center;"><a href="#" onclick="showForgotPassword()">Forgot Password?</a></p>
+  </div>
+
+  <!-- ✅ Forgot Password Screen (Separate) -->
+  <div class="container hidden" id="forgot-password-container">
+    <h2>Forgot Password 🔑</h2>
+    <input type="email" id="forgot-email" required placeholder="Enter your registered Email" />
+    <button onclick="handleForgotPassword()">Get Password</button>
+    <p id="forgot-message" style="margin-top: 10px; font-size: 14px;"></p>
+    <p style="text-align:center;">Remembered your password? <a href="#" onclick="showLogin()">Login</a></p>
+  </div>
+
+  <!-- ✅ Quiz Screen -->
+  <div class="app hidden" id="quiz-container">
+    <h1>Sample Quiz App</h1>
+    <div class="quiz">
+      <h2 id="question">Question Goes Here</h2>
+      <div id="timer" style="font-weight:bold; margin-bottom:10px; color:#001e4d;">Time Left: 10:00</div>
+      <div id="answer-buttons"></div>
+
+      <div class="button-group">
+        <button id="skip-btn">Skip</button>
+        <button id="next-btn">Next</button>
+      </div>
+
+      <button id="logout-btn" style="margin-top: 15px; background: #dc3545; color: #fff; padding: 8px 15px; border-radius: 6px; border: none; cursor: pointer; display: none;">
+        Logout
+      </button>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <footer>
+    <marquee scrollamount="10" behavior="scroll" direction="left" style="color: white;"
+      onmouseover="this.stop();" onmouseout="this.start();">
+      📢 Quiz App created by Gaurav Kumar | Department of Computer Science | Banaras Hindu University, Varanasi
+    </marquee>
+  </footer>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
