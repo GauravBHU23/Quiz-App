@@ -38,7 +38,7 @@ Clone this repository:
 bash
 Copy
 Edit
-git clone https://github.com/your-username/quiz-app.git
+git clone [https://github.com/your-username/quiz-app.git](https://github.com/GauravBHU23/Quiz-App.git)
 Open the folder:
 
 bash
