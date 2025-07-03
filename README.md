@@ -1,3 +1,4 @@
+![Screenshot (314)](https://github.com/user-attachments/assets/2df0902b-43bf-417a-b849-d1e81ef58baf)
 🎯 Quiz App
 A simple and interactive General Knowledge Quiz Application built using HTML, CSS, and JavaScript with User Authentication (Signup, Login, Logout) and Quiz Scoring System.
 
